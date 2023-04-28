@@ -1,10 +1,15 @@
 import "./App.css";
 import React from "react";
 import Profile from "./components/Profile";
+import Avatar from "./components/Avatar";
 
 export default function AppProfile() {
   return (
     <>
+      <Avatar
+        image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+        isNew={true}
+      />
       <Profile
         image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
         name="James Kim"
