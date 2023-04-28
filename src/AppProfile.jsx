@@ -1,8 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
+import React from "react";
+import Profile from "./components/Profile";
 
-function AppProfile() {
-  return <></>;
+export default function AppProfile() {
+  return (
+    <>
+      <Profile />
+      <Profile />
+      <Profile />
+    </>
+  );
 }
-
-export default AppProfile;
