@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./AppTheme.css";
+import { DarkModeContext, DarkModeProvider } from "./context/DarkModeContext";
 
 export default function AppTheme() {
   return (
-    <div>
+    <DarkModeProvider>
       <Header />
       <Main />
       <Footer />
-    </div>
+    </DarkModeProvider>
   );
 }
 
 function Header() {
-  return <header className="header">Header</header>;
+  return (
+    <header className="header">
+      <h1>Header</h1>
+    </header>
+  );
 }
 
 function Main() {
   return (
     <main className="main">
-      Main
+      <h3>Main</h3>
       <Profile />
       <Products />
     </main>
@@ -41,13 +46,35 @@ function User() {
 function Products() {
   return (
     <div>
+      Products
+      <ProductDetail />
+    </div>
+  );
+}
+function ProductDetail() {
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  return (
+    <div>
       Product Detail
-      <p>DarkMode:</p>
-      <button>Toggle</button>
+      <p>
+        DarkMode:
+        {darkMode ? (
+          <span style={{ backgroundColor: "black", color: "white" }}>
+            Dark Mode
+          </span>
+        ) : (
+          <span>Light Mode</span>
+        )}
+      </p>
+      <button onClick={() => toggleDarkMode()}>Toggle</button>
     </div>
   );
 }
 
 function Footer() {
-  return <footer className="footer">Footer</footer>;
+  return (
+    <footer className="footer">
+      <h2>Footer</h2>
+    </footer>
+  );
 }
